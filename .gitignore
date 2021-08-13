@@ -1,6 +1,4 @@
 *.log
-logs/
 mysql/
-*.pid
 tmp/
 .idea/
