@@ -1,2 +1,5 @@
 *.log
 mysql/
+logs/
+tmp/
+.idea/
