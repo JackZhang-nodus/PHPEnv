@@ -1,16 +1,16 @@
 # Install multiple versions of nginx + PHP + MySQL on Windows
-##1. Download Software: sample software version     
+## 1. Download Software: sample software version     
 nginx-1.16.1+php-7.2.9+mysql-5.7.35
 - PHP：   https://windows.php.net/download/
 - Nginx: http://nginx.org/en/download.html
 - Mysql: https://downloads.mysql.com/archives/community/
 
-##2. Unzip the software to the directory
+## 2. Unzip the software to the directory
 - PHP：   C:\env\php\php-7.2.9-nts-Win32-VC15-x64
 - Nginx： C:\env\nginx\nginx-1.16.1
 - Mysql： C:\env\mysql\mysql-5.7.35-winx64
 
-##3. Configure php.ini and nginx.conf
+## 3. Configure php.ini and nginx.conf
 php.ini:
 ```
 extension_dir="./ext"
@@ -43,7 +43,7 @@ server {
         }
 }
 ```
-##4. Create start.bat to start services
+## 4. Create start.bat to start services
 ```
 @echo off
 set console_home=C:\env
@@ -72,7 +72,7 @@ echo Start mysql success
 pause
 Exit
 ```
-##5. Create stop.bat to stop services             
+## 5. Create stop.bat to stop services             
 ```
 @echo off
 echo Stopping nginx...
