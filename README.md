@@ -24,7 +24,7 @@ upstream fastcgi_backend {
 server {
         listen        80;
         server_name  localhost;
-        root   html;
+        root   "C:/sites";
         location / {
             index index.php index.html;
         }
