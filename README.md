@@ -1,26 +1,30 @@
-windows下安装nginx+php+mysql多版本
-1. 下载软件：本示例软件版本nginx-1.16.1+php-7.2.9+mysql-5.7.35
-PHP：   https://windows.php.net/download/
-Nginx: http://nginx.org/en/download.html
-Mysql: https://downloads.mysql.com/archives/community/
+# Install multiple versions of nginx + PHP + MySQL on Windows
+##1. Download Software: sample software version     
+nginx-1.16.1+php-7.2.9+mysql-5.7.35
+- PHP：   https://windows.php.net/download/
+- Nginx: http://nginx.org/en/download.html
+- Mysql: https://downloads.mysql.com/archives/community/
 
-2. 解压软件到目录：
-PHP：   C:\env\php\php-7.2.9-nts-Win32-VC15-x64
-Nginx： C:\env\nginx\nginx-1.16.1
-Mysql： C:\env\mysql\mysql-5.7.35-winx64
+##2. Unzip the software to the directory
+- PHP：   C:\env\php\php-7.2.9-nts-Win32-VC15-x64
+- Nginx： C:\env\nginx\nginx-1.16.1
+- Mysql： C:\env\mysql\mysql-5.7.35-winx64
 
-3. 配置php.ini和nginx.conf：
-php.ini：
+##3. Configure php.ini and nginx.conf
+php.ini:
+```
 extension_dir="./ext"
 error_log=C:/env/php/php-7.2.9-nts-Win32-VC15-x64.log
-
-nginx.conf：
+```
+nginx.conf:
+```
 upstream fastcgi_backend {
 	server 127.0.0.1:9000;
 	server 127.0.0.1:9001;
         server 127.0.0.1:9002;
         server 127.0.0.1:9003;
 }
+
 server {
         listen        80;
         server_name  localhost;
@@ -38,8 +42,9 @@ server {
             include        fastcgi_params;
         }
 }
-
-4. start.bat批命令启动指定版本nginx，php，mysql
+```
+##4. Create start.bat to start services
+```
 @echo off
 set console_home=C:\env
 set php_home=C:\env\php\php-7.2.9-nts-Win32-VC15-x64
@@ -66,9 +71,9 @@ echo Start mysql success
 
 pause
 Exit
-
-5. stop.bat批命令停止nginx，php，mysql
-stop.bat
+```
+##5. Create stop.bat to stop services             
+```
 @echo off
 echo Stopping nginx...
 taskkill /fi "imagename eq nginx.exe" /f> nul
@@ -85,3 +90,4 @@ echo Stop mysql success
 pause
 
 exit
+```
