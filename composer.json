@@ -2,8 +2,5 @@
     "name": "env/php",
     "description": "this is a php environment",
     "type": "metapackage",
-    "license": "1.0.0",
-    "require": {
-        "dg/mysql-dum": "dev-master"
-    }
+    "license": "1.0.0"
 }
