@@ -4,6 +4,6 @@
     "type": "metapackage",
     "license": "1.0.0",
     "require": {
-        "dg/mysql-dum": "1.0.0"
+        "dg/mysql-dum": "dev-master"
     }
 }
