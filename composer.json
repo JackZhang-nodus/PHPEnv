@@ -1,6 +1,19 @@
 {
-    "name": "env/php",
-    "description": "this is a php environment",
-    "type": "metapackage",
-    "license": "1.0.0"
+	"name": "env/php",
+	"description": "MySQL database dump.",
+	"keywords": ["php"],
+	"homepage": "https://github.com/JackZhang-nodus/env",
+	"license": ["BSD-3-Clause"],
+	"authors": [
+		{
+			"name": "Jack",
+			"homepage": "http://jack.com"
+		}
+	],
+	"require": {
+		"php": ">=7.1"
+	},
+	"autoload": {
+		"classmap": ["src/"]
+	}
 }
